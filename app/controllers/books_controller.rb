@@ -8,10 +8,11 @@ class BooksController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     book.save
     # 4.詳細画面へリダイレクト
-    redirect_to book_path(book.id)
+    redirect_to book_path(book.id)#book_path(book.id)に変更する！
   end
 
   def index
+    @book = Book.new
     @books = Book.all 
   end
 
@@ -25,7 +26,8 @@ class BooksController < ApplicationController
   def update
     book = Book.find(params[:id])
     book.update(book_params)
-    redirect_to book_path(book.id)  
+    redirect_to book_path(book.id)#{book.id}"
+    #book_path(book.id)に変更する！
   end
   private
   # ストロングパラメータ
