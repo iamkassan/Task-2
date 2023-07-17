@@ -1,5 +1,10 @@
-<h2>タイトル</h2>
-<p><%= @book.title %></p>
+<div>
+  <%= flash[:notice] %>
+</div>
+<strong><p>Title:</strong><%= @book.title %></p>
 
-<h2>本文</h2>
-<p><%= @book.body %></p>
+<strong><p>Body:</strong><%= @book.body %></p>
+
+<%= link_to "Edit",edit_book_path(@book.id) %>
+<body>|</body>
+<%= link_to "Back",books_path %>
